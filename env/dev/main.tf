@@ -49,3 +49,15 @@ module "managed-redis-dev" {
   location = module.rg-dev.rg_location
   sku_name = "Balanced_B2"
 }
+
+module "private-endpoint-redis-dev" {
+  source = "../../module/private_endpoint"
+  name = "pe-redis-dev"
+  rg_name = module.rg-dev.rg_name
+  location = module.rg-dev.rg_location 
+  subnet_id = module.subnet-redis-dev.subnet_id
+  psc_name = "psc-redis-dev"
+  psc_resource_id = module.subnet-app-dev.subnet_id
+  psc_is_manual_connection = false
+  psc_subresource_names = ["redis-dev"]
+}
