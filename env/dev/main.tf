@@ -41,3 +41,11 @@ module "subnet-redis-dev" {
     vnet_name = module.vnet-dev.vnet_name
     address_prefixes = ["10.0.1.0/24"]
 }
+
+module "managed-redis-dev" {
+  source = "../../module/managed_redis"
+  name = "redis-dev"
+  rg_name = module.rg-dev.rg_name
+  location = module.rg-dev.rg_location
+  sku_name = "Balanced_B2"
+}
