@@ -5,6 +5,7 @@
 - separate env dev and stage
 - rg module
 - vn module
+- subnet module
 
 # issue
 ### backend dont use remote state, cant access azure console for now
