@@ -16,9 +16,17 @@ module "vnet-dev" {
     address_space = ["10.0.0.0/16"]
 }
 
-module "subnet-dev" {
+module "subnet-app-dev" {
     source = "../../module/subnet"
-    name = "subnet-dev"
+    name = "subnet-app-dev"
+    rg_name = module.rg-dev.rg_name
+    vnet_name = module.vnet-dev.vnet_name
+    address_prefixes = ["10.0.1.0/24"]
+}
+
+module "subnet-redis-dev" {
+    source = "../../module/subnet"
+    name = "subnet-redis-dev"
     rg_name = module.rg-dev.rg_name
     vnet_name = module.vnet-dev.vnet_name
     address_prefixes = ["10.0.1.0/24"]
