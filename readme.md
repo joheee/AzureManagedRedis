@@ -6,6 +6,7 @@
 - rg module
 - vn module
 - subnet module
+- redis module
 
 # issue
 ### backend dont use remote state, cant access azure console for now
