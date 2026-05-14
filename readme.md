@@ -60,7 +60,7 @@ flowchart TB
 | 2026-05-13 | `dev` / `stage` environment split (dev wired); RG, VNet, subnet modules   |
 | 2026-05-13 | Managed Redis module, private endpoint module, `readme.md` refresh        |
 
-## Known limitations / next steps
+## Known limitations
 
 - **State**: Root config uses **local state** until Azure portal access is available; switch to a remote backend (for example Azure Storage + state lock) when you can manage cloud-side resources comfortably.
 - **`env/stage`**: Stage layout is part of the design direction; add a sibling root under `env/stage` mirroring `env/dev` when you are ready to parameterize it.
